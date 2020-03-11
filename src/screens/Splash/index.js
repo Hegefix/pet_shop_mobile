@@ -1,11 +1,12 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { ScreenContainer } from '@components';
 import styles from './styles';
 
 const SplashScreen = () => (
-  <View style={styles.container}>
+  <ScreenContainer style={styles.container}>
     <Text style={styles.titleText}>PET SHOP</Text>
-  </View>
+  </ScreenContainer>
 );
 
 export default SplashScreen;
