@@ -19,6 +19,7 @@ const ScreenContainer = ({ children, style = null, withKeyboard = false }) =>
   );
 ScreenContainer.propTypes = {
   withKeyboard: types.bool,
+  style: types.oneOfType([types.object, types.array]),
 };
 
 export default ScreenContainer;
