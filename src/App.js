@@ -4,7 +4,9 @@ import { StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { Provider } from 'react-redux';
 import { SplashScreen } from '@screens';
+import store from './store';
 
 const Stack = createStackNavigator();
 const App = () => {
@@ -16,11 +18,13 @@ const App = () => {
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaProvider>
-        <NavigationContainer onStateChange={handleNavStateChange}>
-          <Stack.Navigator initialRouteName="splash" headerMode="none">
-            <Stack.Screen name="Splash" component={SplashScreen} />
-          </Stack.Navigator>
-        </NavigationContainer>
+        <Provider store={store}>
+          <NavigationContainer onStateChange={handleNavStateChange}>
+            <Stack.Navigator initialRouteName="splash" headerMode="none">
+              <Stack.Screen name="Splash" component={SplashScreen} />
+            </Stack.Navigator>
+          </NavigationContainer>
+        </Provider>
       </SafeAreaProvider>
     </>
   );

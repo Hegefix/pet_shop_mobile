@@ -1,1 +1,1 @@
-export * as authSagas from './authSagas';
+export * from './authSagas';

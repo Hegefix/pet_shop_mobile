@@ -1,4 +1,4 @@
-import { actionTypes } from '@constants';
+import { AUTH_SET_IS_LOADING, AUTH_SET_ERROR } from '@constants';
 
 const initialState = {
   isLoading: false,
@@ -8,13 +8,13 @@ const initialState = {
 const authReducer = (state = initialState, action) => {
   const { payload, type } = action;
   switch (type) {
-    case actionTypes.AUTH_SET_IS_LOADING: {
+    case AUTH_SET_IS_LOADING: {
       return {
         ...state,
         isLoading: payload,
       };
     }
-    case actionTypes.AUTH_SET_ERROR: {
+    case AUTH_SET_ERROR: {
       return {
         ...state,
         error: payload,
