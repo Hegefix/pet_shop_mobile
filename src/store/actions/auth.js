@@ -1,8 +1,13 @@
 import {
+  AUTH_BOOTSTRAP_ASYNC,
   AUTH_WITH_PHONE_ASYNC,
   AUTH_SET_IS_LOADING,
   AUTH_SET_ERROR,
 } from '@actionTypes';
+
+export const authBootsrapAsync = () => ({
+  type: AUTH_BOOTSTRAP_ASYNC,
+});
 
 export const authWithPhoneAsync = phoneNumber => ({
   type: AUTH_WITH_PHONE_ASYNC,
