@@ -2,7 +2,7 @@ import {
   AUTH_WITH_PHONE_ASYNC,
   AUTH_SET_IS_LOADING,
   AUTH_SET_ERROR,
-} from '@constants';
+} from '@actionTypes';
 
 export const authWithPhoneAsync = phoneNumber => ({
   type: AUTH_WITH_PHONE_ASYNC,

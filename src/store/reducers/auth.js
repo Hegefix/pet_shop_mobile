@@ -1,4 +1,4 @@
-import { AUTH_SET_IS_LOADING, AUTH_SET_ERROR } from '@constants';
+import { AUTH_SET_IS_LOADING, AUTH_SET_ERROR } from '@actionTypes';
 
 const initialState = {
   isLoading: false,
