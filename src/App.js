@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { SplashScreen } from '@screens';
+import { SplashScreen, PhoneAuthScreen } from '@screens';
 import store from './store';
 
 const Stack = createStackNavigator();
@@ -20,8 +20,9 @@ const App = () => {
       <SafeAreaProvider>
         <Provider store={store}>
           <NavigationContainer onStateChange={handleNavStateChange}>
-            <Stack.Navigator initialRouteName="splash" headerMode="none">
+            <Stack.Navigator initialRouteName="Splash" headerMode="none">
               <Stack.Screen name="Splash" component={SplashScreen} />
+              <Stack.Screen name="PhoneAuth" component={PhoneAuthScreen} />
             </Stack.Navigator>
           </NavigationContainer>
         </Provider>

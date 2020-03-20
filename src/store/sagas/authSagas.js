@@ -1,11 +1,20 @@
-import { put } from 'redux-saga/effects';
-import { authSetIsLoading, authSetError } from '@actions';
+import { put, call } from 'redux-saga/effects';
+import AsyncStorage from '@react-native-community/async-storage';
+import {
+  authSetIsLoading,
+  authSetError,
+  authSetUser,
+  authSetIsInitialized,
+} from '@actions';
 
-export function* authBootsrapSaga(action) {
+export function* authBootsrapSaga() {
   try {
-    console.log('authBootsrapSaga', action);
     yield put(authSetIsLoading(true));
+    const user = yield call(AsyncStorage.getItem, '@user');
+    yield put(authSetUser(user || null));
+    yield put(authSetIsInitialized(true));
   } catch (error) {
+    console.log('error', error);
     yield put(authSetError(error));
   } finally {
     yield put(authSetIsLoading(false));
